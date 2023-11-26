@@ -15,24 +15,24 @@ def caesar(start_text, shift_amount, cypher_direction):
     #list to contain encrypt charactere
     final_text = []
 
-    for letter in text:
-        letter_text += letter
+    for char in text:
+        letter_text += char
         #check if the character is.alpha() change it else leave it
-        if letter.isalpha():
+        if char.isalpha():
             #if letter is in alphabet and list
-            if letter in alphabet and letter in letter_text:
+            if char in alphabet and char in letter_text:
                 if direction == 'encode':
-                    encrypt_index = int(alphabet.index(letter) + shift)
+                    encrypt_index = int(alphabet.index(char) + shift)
                     #add each encrypt letter to text encrypt
                     final_text += alphabet[encrypt_index]
 
                 elif direction == 'decode':
                     #take the index of the commun letter in alphabet and minus shift to decrypt it
-                    decrypt_index = int(alphabet.index(letter) - shift)
+                    decrypt_index = int(alphabet.index(char) - shift)
                     #add each encrypt letter to text decrypt
                     final_text += alphabet[decrypt_index]
         else:
-            final_text += letter
+            final_text += char
     #join each caractere and print it
     message = ''.join(final_text)
     if direction == 'encode':
